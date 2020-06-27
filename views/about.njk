@@ -1,0 +1,28 @@
+{% extends "layout.njk" %}
+
+{% block head%}
+    <title>Sobre - Rocketseat</title>
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+{% endblock %}
+
+{% block content %}
+    <div id="wrapper">
+        <img src="{{about.img_url}}" alt="Imagem de {{about.name}}">
+        <h1>{{about.name}}</h1>
+        <p>{{about.description}}</p>
+        <h2>{{about.title}}</h2>
+        <ul>
+            {% for tech in about.techs %}
+                <li>{{tech}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <footer class="header-footer">
+        <div id="footer-links" class="links">
+            {% for link in about.links %}
+                <a href="{{link.url}}" target="_blank">{{link.name}}</a>
+            {% endfor %}
+        </div>
+    </footer>
+{% endblock%}
